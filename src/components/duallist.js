@@ -108,7 +108,7 @@ class Duallist extends Component {
   renderLeftList = () => {
     const {available, selected} = this.props;
     const visibleOptions = available.filter((op) => {
-      if (this.state.searchStringLeft && !op.label.includes(this.state.searchStringLeft)) {
+      if (this.state.searchStringLeft && !op.label.toLowerCase().includes(this.state.searchStringLeft.toLowerCase())) {
         return false;
       } else if (selected.includes(op.value)) {
         return false;
@@ -127,7 +127,7 @@ class Duallist extends Component {
     const selectedOptions = [];
     
     selected.forEach((selection) => {
-      if (!this.state.searchStringRight || (this.state.searchStringRight && selection.includes(this.state.searchStringRight))) {
+      if (!this.state.searchStringRight || (this.state.searchStringRight && selection.toLowerCase().includes(this.state.searchStringRight.toLowerCase()))) {
         selectedOptions.push(available.find(av => av.value === selection)); 
       }
     });
@@ -136,6 +136,14 @@ class Duallist extends Component {
         {selectedOptions.map(op => <option value={op.value} key={`right-${op.value}`}>{op.label}</option>)}
       </select>
     )
+  }
+
+  onLeftSearch = (event) => {
+    this.setState({searchStringLeft: event.target.value});
+  }
+
+  onRightSearch = (event) => {
+    this.setState({searchStringRight: event.target.value});
   }
 
   render() {
@@ -147,7 +155,7 @@ class Duallist extends Component {
             {leftLabel}
           </label>
           {searchable &&
-            <input type="text" className="search-bar left-search" placeHolder="Search available options" />
+            <input type="text" className="search-bar left-search" placeholder="Search available options" onChange={this.onLeftSearch} />
           }
           <div className="list-container">
             {this.renderLeftList()}
@@ -188,7 +196,7 @@ class Duallist extends Component {
             {rightLabel}
           </label>
           {searchable &&
-            <input type="text" className="search-bar right-search" placeHolder="Search selected options" />
+            <input type="text" className="search-bar right-search" placeholder="Search selected options" onChange={this.onRightSearch}/>
           }
           <div className="list-container">
             {this.renderRightList()}
