@@ -32,6 +32,8 @@ class App extends Component {
           onSelect={this.onSelect}
           leftLabel={leftLabel}
           rightLabel={rightLabel}
+          sortable={true}
+          searchable={true}
         />
       </div>
     );

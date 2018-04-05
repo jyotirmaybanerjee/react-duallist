@@ -1,6 +1,6 @@
 // @flow
 
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 
 class Duallist extends Component {
   props: {
@@ -8,6 +8,8 @@ class Duallist extends Component {
     selected: Array<Object>,
     leftLabel: string,
     rightLabel: string,
+    sortable: bool,
+    searchable: bool,
     onSelect: (Array<Object>) => void,
   };
 
@@ -137,14 +139,17 @@ class Duallist extends Component {
   }
 
   render() {
-    const {leftLabel, rightLabel} = this.props;
+    const {leftLabel, rightLabel, sortable, searchable} = this.props;
     return (
       <div className="dula-list">
         <div className="list-box left-list">
+          <label>
+            {leftLabel}
+          </label>
+          {searchable &&
+            <input type="text" className="search-bar left-search" placeHolder="Search available options" />
+          }
           <div className="list-container">
-            <label className="list-label">
-              {leftLabel}
-            </label>
             {this.renderLeftList()}
           </div>
         </div>
@@ -179,47 +184,52 @@ class Duallist extends Component {
           </div>
         </div>
         <div className="list-box right-list">
+          <label>
+            {rightLabel}
+          </label>
+          {searchable &&
+            <input type="text" className="search-bar right-search" placeHolder="Search selected options" />
+          }
           <div className="list-container">
-            <label className="list-label">
-              {rightLabel}
-            </label>
             {this.renderRightList()}
           </div>
         </div>
-        <div className="right-toolbar">
-          <div className="move-top">
-            <button
-              className="btn-move"
-              disabled={this.state.rightSelected.length !== 1}
-              onClick={this.onMoveAllUp}
-            >
-              <i className="fa fa-angle-double-up" />
-            </button>
-            <button
-              className="btn-move"
-              disabled={this.state.rightSelected.length !== 1}
-              onClick={this.onMoveUp}
-            >
-              <i className="fa fa-angle-up" />
-            </button>
+        {sortable &&
+          <div className="right-toolbar">
+            <div className="move-top">
+              <button
+                className="btn-move"
+                disabled={this.state.rightSelected.length !== 1}
+                onClick={this.onMoveAllUp}
+              >
+                <i className="fa fa-angle-double-up" />
+              </button>
+              <button
+                className="btn-move"
+                disabled={this.state.rightSelected.length !== 1}
+                onClick={this.onMoveUp}
+              >
+                <i className="fa fa-angle-up" />
+              </button>
+            </div>
+            <div className="move-bottom">
+              <button
+                className="btn-move"
+                disabled={this.state.rightSelected.length !== 1}
+                onClick={this.onMoveDown}
+              >
+                <i className="fa fa-angle-down" />
+              </button>
+              <button
+                className="btn-move"
+                disabled={this.state.rightSelected.length !== 1}
+                onClick={this.onMoveAllDown}
+              >
+                <i className="fa fa-angle-double-down" />
+              </button>
+            </div>
           </div>
-          <div className="move-bottom">
-            <button
-              className="btn-move"
-              disabled={this.state.rightSelected.length !== 1}
-              onClick={this.onMoveDown}
-            >
-              <i className="fa fa-angle-down" />
-            </button>
-            <button
-              className="btn-move"
-              disabled={this.state.rightSelected.length !== 1}
-              onClick={this.onMoveAllDown}
-            >
-              <i className="fa fa-angle-double-down" />
-            </button>
-          </div>
-        </div>
+        }
       </div>
     );
   }
