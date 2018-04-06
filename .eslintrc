@@ -21,7 +21,8 @@
       "object-curly-spacing": [1, "never"],
       "prop-types": [0],
       "react/display-name": 0,
-      "react/prop-types": 1
+      "react/prop-types": 1,
+      "import/no-extraneous-dependencies": 1,
   },
   "extends": [
       "airbnb-base",

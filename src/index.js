@@ -21,6 +21,14 @@
      onSelect: (Array<Object>) => void,
    };
 
+   static defaultProps = {
+    ...Component.defaultProps,
+    leftLabel: 'Available',
+    rightLabel: 'Selected',
+    sortable: true,
+    searchable: true,
+  }
+
    state = {
      searchStringLeft: '',
      searchStringRight: '',

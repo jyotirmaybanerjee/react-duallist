@@ -1,6 +1,6 @@
 {
   "name": "react-duallist",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "private": false,
   "description": "A React searchable and sortable dual list.",
   "main": "dist/index.js",
@@ -17,14 +17,17 @@
     "dual list",
     "searchable",
     "sortable",
-    "component"
+    "component",
+    "multiple",
+    "multiselect",
+    "listbox"
   ],
   "author": "Jyotirmay Banerjee <jyotirmaybanerjee@gmail.com> (jyotirmaybanerjee.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jyotirmaybanerjee/react-duallist/issues"
   },
-  "homepage": "https://github.com/jyotirmaybanerjee/react-duallist#readme",
+  "homepage": "https://rawgit.com/jyotirmaybanerjee/react-duallist/master/example/examples.html",
   "peerDependencies": {
     "react": "^15.0.0 || ^0.14.0"
   },
@@ -45,11 +48,10 @@
     "eslint-rules": "^0.4.3",
     "eslint_d": "^5.2.2",
     "react": "^16.3.1",
+    "react-dom": "^16.3.1",
     "react-autosuggest": "^9.3.4",
     "react-input-autosize": "^2.2.1",
+    "react-syntax-highlighter": "^7.0.2",
     "reactpack": "^0.9.0"
-  },
-  "dependencies": {
-    "react-dom": "^16.3.1"
   }
 }
