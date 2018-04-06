@@ -1,9 +1,9 @@
 {
   "name": "react-duallist",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "private": false,
   "description": "A React searchable and sortable dual list.",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build:example": "reactpack --no-extract --no-source-map --no-html example/index.js example/",
     "prepublish": "./node_modules/.bin/babel -d dist src/"
@@ -37,7 +37,7 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-loader": "^2.0.0",
-    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-babel": "^5.0.0",
     "eslint-plugin-flowtype": "^2.46.1",
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
