@@ -1,11 +1,11 @@
-$rdl-input-bg: #fff
-$rdl-input-disabled-bg: #eee
-$rdl-input-border: #ccc
-$rdl-input-color: #333
-$rdl-btn-bg: $rdl-input-bg
-$rdl-btn-border: $rdl-input-border
-$rdl-btn-color: #333
-$rdl-line-height: 1.428571429
+$common-bg: #fff
+$disabled-bg: #eee
+$input-border: #ccc
+$input-color: #333
+$btn-bg: $common-bg
+$btn-border: $input-border
+$btn-color: #333
+$line-height: 1.428571429
 
 .dula-list
   display: flex
@@ -15,10 +15,10 @@ $rdl-line-height: 1.428571429
     box-sizing: border-box
   input, select
     &:disabled
-      background: $rdl-input-disabled-bg
+      background: $disabled-bg
       cursor: not-allowed
   button, select
-    line-height: $rdl-line-height
+    line-height: $line-height
     font-family: inherit
 
   .list-box
@@ -33,11 +33,11 @@ $rdl-line-height: 1.428571429
 
     .list-filter, .list-control
       display: block
-      border: 1px solid $rdl-input-border
+      border: 1px solid $input-border
       border-radius: 2px
       padding: 8px 12px
       width: 100%
-      color: $rdl-input-color
+      color: $input-color
       font-size: 14px
 
     .list-filter
@@ -66,26 +66,26 @@ $rdl-line-height: 1.428571429
 
   .btn-move
     margin-bottom: 5px
-    border: 1px solid $rdl-btn-border
+    border: 1px solid $btn-border
     border-radius: 2px
-    background: $rdl-btn-bg
+    background: $btn-bg
     cursor: pointer
     padding: 5px 10px
-    color: $rdl-btn-color
+    color: $btn-color
     font-size: 12px
 
     &:active:not(:disabled),
     &:focus:not(:disabled)
-      border-color: darken($rdl-btn-border, 25%)
-      background: darken($rdl-btn-bg, 10%)
+      border-color: darken($btn-border, 25%)
+      background: darken($btn-bg, 10%)
 
     &:focus:not(:disabled)
       outline: thin dotted
       outline-offset: -2px
 
     &:hover:not(:disabled)
-      border-color: darken($rdl-btn-border, 12%)
-      background: darken($rdl-btn-bg, 10%)
+      border-color: darken($btn-border, 12%)
+      background: darken($btn-bg, 10%)
 
     &:disabled
       opacity: .5
@@ -98,7 +98,7 @@ $rdl-line-height: 1.428571429
     i
       margin: 0 -1px
 
-  
+
 
   .list-container
     display: flex

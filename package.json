@@ -1,19 +1,12 @@
 {
   "name": "react-duallist",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.0.2",
+  "private": false,
   "description": "A React searchable and sortable dual list.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build:example": "reactpack --no-extract --no-source-map --no-html example/index.js example/",
-    "prepublish": "./node_modules/.bin/babel -d lib src/",
-    "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production",
-    "test": "mocha --compilers js:babel-core/register --require ./test/setup.js 'src/**/*spec.js'",
-    "test:watch": "npm run test -- --watch",
-    "lint": "npm run lint:js && npm run lint:sass",
-    "lint:js": "eslint --cache src",
-    "lint:sass": "sass-lint -v"
+    "prepublish": "./node_modules/.bin/babel -d dist src/"
   },
   "repository": {
     "type": "git",
@@ -23,7 +16,8 @@
     "React",
     "dual list",
     "searchable",
-    "sortable"
+    "sortable",
+    "component"
   ],
   "author": "Jyotirmay Banerjee <jyotirmaybanerjee@gmail.com> (jyotirmaybanerjee.com)",
   "license": "MIT",
@@ -35,15 +29,11 @@
     "react": "^15.0.0 || ^0.14.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "babel-cli": "^6.11.4",
     "babel-eslint": "^8.2.2",
-    "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "chai": "^4.1.2",
-    "css-loader": "^0.28.11",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-2": "^6.5.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-loader": "^2.0.0",
@@ -54,26 +44,12 @@
     "eslint-plugin-react": "^7.7.0",
     "eslint-rules": "^0.4.3",
     "eslint_d": "^5.2.2",
-    "exports-loader": "^0.7.0",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "happypack": "^4.0.1",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.0.7",
-    "imports-loader": "^0.8.0",
-    "jsdom": "^11.6.2",
-    "mocha": "^5.0.4",
-    "node-sass": "^4.7.2",
-    "react-addons-test-utils": "^15.6.2",
-    "sass-lint": "^1.12.1",
-    "sass-loader": "^6.0.7",
-    "style-loader": "^0.20.3",
-    "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.12",
-    "webpack-dev-server": "^3.1.1"
+    "react": "^16.3.1",
+    "react-autosuggest": "^9.3.4",
+    "react-input-autosize": "^2.2.1",
+    "reactpack": "^0.9.0"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.3.1"
   }
 }
