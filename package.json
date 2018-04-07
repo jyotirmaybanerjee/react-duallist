@@ -1,8 +1,8 @@
 {
   "name": "react-duallist",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": false,
-  "description": "A React searchable and sortable dual list.",
+  "description": "A React searchable and sortable and fully customizable dual list.",
   "main": "dist/index.js",
   "scripts": {
     "build:example": "reactpack --no-extract --no-source-map --no-html example/index.js example/",
@@ -20,7 +20,9 @@
     "component",
     "multiple",
     "multiselect",
-    "listbox"
+    "listbox",
+    "custom icons",
+    "no dependecies"
   ],
   "author": "Jyotirmay Banerjee <jyotirmaybanerjee@gmail.com> (jyotirmaybanerjee.com)",
   "license": "MIT",
@@ -48,8 +50,9 @@
     "eslint-rules": "^0.4.3",
     "eslint_d": "^5.2.2",
     "react": "^16.3.1",
-    "react-dom": "^16.3.1",
     "react-autosuggest": "^9.3.4",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.3.1",
     "react-input-autosize": "^2.2.1",
     "react-syntax-highlighter": "^7.0.2",
     "reactpack": "^0.9.0"

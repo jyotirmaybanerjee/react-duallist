@@ -18,15 +18,30 @@
      rightLabel: string,
      sortable: bool,
      searchable: bool,
+     moveLeftIcon: Object,
+     moveAllLeftIcon: Object,
+     moveRightIcon: Object,
+     moveAllRightIcon: Object,
+     moveUpIcon: Object,
+     moveTopIcon: Object,
+     moveDownIcon: Object,
+     moveBottomIcon: Object,
      onSelect: (Array<Object>) => void,
    };
 
    static defaultProps = {
-    ...Component.defaultProps,
     leftLabel: 'Available',
     rightLabel: 'Selected',
     sortable: true,
     searchable: true,
+    moveLeftIcon: <span style={{fontSize: '14px', fontWeight: 'bold'}}>{'<'}</span>,
+    moveAllLeftIcon: <span style={{fontSize: '14px', fontWeight: 'bold'}}>{'<<'}</span>,
+    moveRightIcon: <span style={{fontSize: '14px', fontWeight: 'bold'}}>{'>'}</span>,
+    moveAllRightIcon: <span style={{fontSize: '14px', fontWeight: 'bold'}}>{'>>'}</span>,
+    moveUpIcon: <span style={{fontSize: '14px', fontWeight: 'bold', color: '#000'}}>&#xffea;</span>,
+    moveTopIcon: <span style={{fontSize: '14px', fontWeight: 'bold', color: '#000'}}>&#x21c8;</span>,
+    moveDownIcon: <span style={{fontSize: '14px', fontWeight: 'bold', color: '#000'}}>&#xffec;</span>,
+    moveBottomIcon: <span style={{fontSize: '14px', fontWeight: 'bold', color: '#000'}}>&#x21ca;</span>,
   }
 
    state = {
@@ -163,7 +178,10 @@
    }
 
    render() {
-     const {leftLabel, rightLabel, sortable, searchable} = this.props;
+     const {leftLabel, rightLabel, sortable, searchable, moveLeftIcon,
+       moveAllLeftIcon, moveRightIcon, moveAllRightIcon, moveUpIcon,
+       moveTopIcon, moveDownIcon, moveBottomIcon} = this.props;
+
      return (
        <div className="dula-list">
          <div className="list-box left-list">
@@ -183,13 +201,13 @@
                className="btn-move"
                onClick={this.onMoveAllRight}
              >
-               <i className="fa fa-angle-double-right" />
+               {moveAllRightIcon}
              </button>
              <button
                className="btn-move"
                onClick={this.onMoveRight}
              >
-               <i className="fa fa-angle-right" />
+               {moveRightIcon}
              </button>
            </div>
            <div className="move-left">
@@ -197,13 +215,13 @@
                className="btn-move"
                onClick={this.onMoveLeft}
              >
-               <i className="fa fa-angle-left" />
+               {moveLeftIcon}
              </button>
              <button
                className="btn-move"
                onClick={this.onMoveAllLeft}
              >
-               <i className="fa fa-angle-double-left" />
+               {moveAllLeftIcon}
              </button>
            </div>
          </div>
@@ -226,14 +244,14 @@
                  disabled={this.state.rightSelected.length !== 1}
                  onClick={this.onMoveAllUp}
                >
-                 <i className="fa fa-angle-double-up" />
+                 {moveTopIcon}
                </button>
                <button
                  className="btn-move"
                  disabled={this.state.rightSelected.length !== 1}
                  onClick={this.onMoveUp}
                >
-                 <i className="fa fa-angle-up" />
+                 {moveUpIcon}
                </button>
              </div>
              <div className="move-bottom">
@@ -242,14 +260,14 @@
                  disabled={this.state.rightSelected.length !== 1}
                  onClick={this.onMoveDown}
                >
-                 <i className="fa fa-angle-down" />
+                 {moveDownIcon}
                </button>
                <button
                  className="btn-move"
                  disabled={this.state.rightSelected.length !== 1}
                  onClick={this.onMoveAllDown}
                >
-                 <i className="fa fa-angle-double-down" />
+                 {moveBottomIcon}
                </button>
              </div>
            </div>

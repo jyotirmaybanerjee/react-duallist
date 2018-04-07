@@ -57,4 +57,4 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Release History
 
-* 0.0.7 Examples
+* 0.0.8 - Custom icons
