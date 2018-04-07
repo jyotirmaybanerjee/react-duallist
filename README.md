@@ -63,4 +63,4 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Release History
 
-* 0.0.9 - Toolbars style fix
+* 1.0.0 - Support React 16
