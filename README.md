@@ -1,6 +1,6 @@
 react-duallist
 =========
-A React searchable and sortable dual list.
+A React based searchable, sortable and fully customizable dual list.
 
 [Demo](https://rawgit.com/jyotirmaybanerjee/react-duallist/master/example/examples.html)
 
@@ -18,7 +18,7 @@ A React searchable and sortable dual list.
   ```
   import Duallist from 'react-duallist';
 
-  import 'react-duallist/dist/react_duallist.[css|less|scss|sass]'
+  import 'react-duallist/lib/react_duallist.[css|less|scss|sass]'
   ```
 
   ```jsx
@@ -63,4 +63,4 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Release History
 
-* 0.0.8 - Custom icons
+* 0.0.9 - Toolbars style fix

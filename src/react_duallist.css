@@ -42,7 +42,7 @@
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
-  margin: 0 10px;
+  margin: 55px 10px 0 10px;
 }
 .dula-list .center-toolbar .move-left, .dula-list .center-toolbar .move-right {
   display: flex;
@@ -55,7 +55,7 @@
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
-  margin: 0 10px;
+  margin: 55px 10px 0 10px;
 }
 .dula-list .right-toolbar .move-top, .dula-list .right-toolbar .move-bottom {
   display: flex;
