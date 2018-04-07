@@ -2,8 +2,6 @@ react-duallist
 =========
 A React searchable and sortable dual list.
 
-Reusable Chart Components React D3 Bar line scattered plot pie
-
 [Demo](https://rawgit.com/jyotirmaybanerjee/react-duallist/master/example/examples.html)
 
 ## Install
@@ -42,6 +40,14 @@ Reusable Chart Components React D3 Bar line scattered plot pie
 | rightLabel  | A header for the right (selected) list  | Selected  |    |
 | sortable  | A false value will hide the reorder buttons on the right  | true  |    |
 | searchable  | A false value will hide the search field on the top  | true  |    |
+| moveLeftIcon  | fontawesome icons or icon of your choice  | <  |    |
+| moveAllLeftIcon  | fontawesome icons or icon of your choice  | <<  |    |
+| moveRightIcon  | fontawesome icons or icon of your choice  | >  |    |
+| moveAllRightIcon  | fontawesome icons or icon of your choice  | >>  |    |
+| moveUpIcon  | fontawesome icons or icon of your choice  | ￪  |    |
+| moveTopIcon  | fontawesome icons or icon of your choice  | ⇈  |    |
+| moveDownIcon  | fontawesome icons or icon of your choice  | ￬  |    |
+| moveBottomIcon  | fontawesome icons or icon of your choice  | ⇊  |    |
 
 
 ## Tests
