@@ -183,8 +183,8 @@
        moveTopIcon, moveDownIcon, moveBottomIcon} = this.props;
 
      return (
-       <div className="dula-list">
-         <div className="list-box left-list">
+       <div className="react-listbox-dual-list">
+         <div className="react-listbox-list-box left-list">
            <label>
              {leftLabel}
            </label>
@@ -195,7 +195,7 @@
              {this.renderLeftList()}
            </div>
          </div>
-         <div className="center-toolbar">
+         <div className="react-listbox-center-toolbar">
            <div className="move-right">
              <button
                className="btn-move"
@@ -225,7 +225,7 @@
              </button>
            </div>
          </div>
-         <div className="list-box right-list">
+         <div className="react-listbox-list-box right-list">
            <label>
              {rightLabel}
            </label>
@@ -237,7 +237,7 @@
            </div>
          </div>
          {sortable &&
-           <div className="right-toolbar">
+           <div className="react-listbox-right-toolbar">
              <div className="move-top">
                <button
                  className="btn-move"

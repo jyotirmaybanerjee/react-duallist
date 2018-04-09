@@ -56854,10 +56854,10 @@
 
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'dula-list' },
+	        { className: 'react-listbox-dual-list' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'list-box left-list' },
+	          { className: 'react-listbox-list-box left-list' },
 	          _react2.default.createElement(
 	            'label',
 	            null,
@@ -56872,7 +56872,7 @@
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'center-toolbar' },
+	          { className: 'react-listbox-center-toolbar' },
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'move-right' },
@@ -56916,7 +56916,7 @@
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'list-box right-list' },
+	          { className: 'react-listbox-list-box right-list' },
 	          _react2.default.createElement(
 	            'label',
 	            null,
@@ -56931,7 +56931,7 @@
 	        ),
 	        sortable && _react2.default.createElement(
 	          'div',
-	          { className: 'right-toolbar' },
+	          { className: 'react-listbox-right-toolbar' },
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'move-top' },

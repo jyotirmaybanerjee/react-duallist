@@ -7,7 +7,7 @@ $btn-border: $input-border;
 $btn-color: #333;
 $line-height: 1.428571429;
 
-.dula-list {
+.react-listbox-dual-list {
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -25,7 +25,7 @@ $line-height: 1.428571429;
     font-family: inherit;
   }
 
-  .list-box {
+  .react-listbox-list-box {
     display: flex;
     flex: 1 1 0;
     flex-direction: column;
@@ -52,7 +52,7 @@ $line-height: 1.428571429;
     }
   }
 
-  .center-toolbar {
+  .react-listbox-center-toolbar {
     display: flex;
     flex: 0 0 auto;
     flex-direction: column;
@@ -65,7 +65,7 @@ $line-height: 1.428571429;
       margin-bottom: 10px;
     }
   }
-  .right-toolbar {
+  .react-listbox-right-toolbar {
     display: flex;
     flex: 0 0 auto;
     flex-direction: column;

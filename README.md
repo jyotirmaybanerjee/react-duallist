@@ -63,4 +63,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Release History
 
+* 0.0.1 - Duallist implementations
+* 0.0.2 - Support sorting on the 'selected' list
+* 0.0.3 - Hide/show search bar
+* 0.0.4 - Add example page
+* 0.0.5 - Add Custom icon support
 * 1.0.0 - Support React 16
+* 1.1.0 - Some style changes
