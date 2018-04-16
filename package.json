@@ -1,9 +1,9 @@
 {
   "name": "react-duallist",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": false,
   "description": "A React based searchable, sortable and fully customizable dual list.",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build:example": "reactpack --no-extract --no-source-map --no-html example/index.js example/",
     "prepublish": "./node_modules/.bin/babel -d lib src/"
