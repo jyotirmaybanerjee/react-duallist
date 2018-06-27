@@ -71,3 +71,4 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * 1.0.0 - Support React 16
 * 1.1.0 - Some style changes
 * 1.1.1 - Rename lib directory
+* 1.1.2 - Handle when empty arrays are passed
