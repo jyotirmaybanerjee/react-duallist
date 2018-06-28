@@ -6,6 +6,8 @@
  * Licensed under the MIT license.
  */
 
+/* eslint-disable react/sort-comp */
+
  // @flow
 
  import React, {Component} from 'react';
@@ -16,8 +18,8 @@
      selected: Array<Object>,
      leftLabel: string,
      rightLabel: string,
-     sortable: bool,
-     searchable: bool,
+     sortable: boolean,
+     searchable: boolean,
      moveLeftIcon: Object,
      moveAllLeftIcon: Object,
      moveRightIcon: Object,
@@ -26,7 +28,9 @@
      moveTopIcon: Object,
      moveDownIcon: Object,
      moveBottomIcon: Object,
-     onSelect: (Array<Object>) => void,
+     onMove: ?(Array<Object>) => void,
+     onSelectInLeft: ?(Array<Object>) => void,
+     onSelectInRight: ?(Array<Object>) => void,
    };
 
    static defaultProps = {
@@ -52,66 +56,66 @@
    }
 
    onMoveLeft = () => {
-     const {selected, onSelect} = this.props;
+     const {selected, onMove} = this.props;
      const selectedOptions = selected.filter(op => !this.state.rightSelected.includes(op));
-     onSelect(selectedOptions);
+     onMove(selectedOptions);
      this.setState({rightSelected: []});
    }
 
    onMoveAllLeft = () => {
-     const {onSelect} = this.props;
-     onSelect([]);
+     const {onMove} = this.props;
+     onMove([]);
      this.setState({rightSelected: []});
    }
 
    onMoveRight = () => {
-     const {selected, onSelect} = this.props;
+     const {selected, onMove} = this.props;
      const selectedOptions = [...selected, ...this.state.leftSelected];
-     onSelect(selectedOptions);
+     onMove(selectedOptions);
      this.setState({leftSelected: []});
    }
 
    onMoveAllRight = () => {
-     const {available, onSelect} = this.props;
+     const {available, onMove} = this.props;
      const selectedOptions = available.map(op => op.value);
-     onSelect(selectedOptions);
+     onMove(selectedOptions);
      this.setState({leftSelected: []});
    }
 
    onMoveUp = () => {
-     const {selected, onSelect} = this.props;
-     let newSelected = selected;
+     const {selected, onMove} = this.props;
+     const newSelected = selected;
      const currentIndex = selected.indexOf(this.state.rightSelected[0]);
      newSelected.splice(currentIndex, 1);
      newSelected.splice(currentIndex - 1, 0, this.state.rightSelected[0]);
-     onSelect(newSelected);
+     onMove(newSelected);
    }
 
    onMoveAllUp = () => {
-     const {selected, onSelect} = this.props;
-     let newSelected = selected;
+     const {selected, onMove} = this.props;
+     const newSelected = selected;
      const currentIndex = selected.indexOf(this.state.rightSelected[0]);
      newSelected.splice(currentIndex, 1);
      newSelected.splice(0, 0, this.state.rightSelected[0]);
-     onSelect(newSelected);
+     onMove(newSelected);
    }
 
    onMoveDown = () => {
-     const {selected, onSelect} = this.props;
-     let newSelected = selected;
+     const {selected, onMove} = this.props;
+     const newSelected = selected;
      const currentIndex = selected.indexOf(this.state.rightSelected[0]);
      newSelected.splice(currentIndex, 1);
      newSelected.splice(currentIndex + 1, 0, this.state.rightSelected[0]);
-     onSelect(newSelected);
+     onMove(newSelected);
    }
 
    onMoveAllDown = () => {
-     const {selected, onSelect} = this.props;
-     let newSelected = selected;
+     const {selected, onMove} = this.props;
+     const newSelected = selected;
      const currentIndex = selected.indexOf(this.state.rightSelected[0]);
      newSelected.splice(currentIndex, 1);
      newSelected.splice(newSelected.length, 0, this.state.rightSelected[0]);
-     onSelect(newSelected);
+     onMove(newSelected);
    }
 
    onSelectInLeft = (event) => {
@@ -122,6 +126,8 @@
          values.push(options[i].value);
        }
      }
+     if (this.props.onSelectInLeft)
+       this.props.onSelectInLeft(values);
      this.setState({leftSelected: values});
    }
 
@@ -133,6 +139,8 @@
          values.push(options[i].value);
        }
      }
+     if (this.props.onSelectInRight)
+       this.props.onSelectInRight(values);
      this.setState({rightSelected: values});
    }
 
@@ -182,7 +190,7 @@
        moveAllLeftIcon, moveRightIcon, moveAllRightIcon, moveUpIcon,
        moveTopIcon, moveDownIcon, moveBottomIcon, available, selected} = this.props;
 
-     if (available.length < 1 || selected.length < 1) 
+     if (available.length < 1 || selected.length < 1)
       return <h3>Please pass non empty arrays </h3>;
      return (
        <div className="react-listbox-dual-list">
@@ -232,7 +240,7 @@
              {rightLabel}
            </label>
            {searchable &&
-             <input type="text" className="search-bar right-search" placeholder="Search selected options" onChange={this.onRightSearch}/>
+             <input type="text" className="search-bar right-search" placeholder="Search selected options" onChange={this.onRightSearch} />
            }
            <div className="list-container">
              {this.renderRightList()}

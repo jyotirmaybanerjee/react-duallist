@@ -97,7 +97,7 @@
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Examples.__proto__ || Object.getPrototypeOf(Examples)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
 	      available: [{ label: 'Alabama', value: 'AL' }, { label: 'Alaska', value: 'AK' }, { label: 'Arizona', value: 'AZ' }, { label: 'Arkansas', value: 'AR' }, { label: 'California', value: 'CA' }, { label: 'Colorado', value: 'CO' }, { label: 'Connecticut', value: 'CT' }, { label: 'Delaware', value: 'DE' }, { label: 'Florida', value: 'FL' }, { label: 'Georgia', value: 'GA' }],
 	      selected: ['AL', 'CA']
-	    }, _this.onSelect = function (selected) {
+	    }, _this.onMove = function (selected) {
 	      _this.setState({ selected: selected });
 	    }, _this.onSelectTab = function (activeTab) {
 	      _this.setState({ activeTab: activeTab });
@@ -174,7 +174,7 @@
 	                _react2.default.createElement(
 	                  _prism2.default,
 	                  { language: 'jsx', style: _prism3.dark },
-	                  '\n                    <Duallist\n                      available={available}\n                      selected={selected}\n                      onSelect={this.onSelect}\n                    />'
+	                  '\n                    <Duallist\n                      available={available}\n                      selected={selected}\n                      onMove={this.onMove}\n                    />'
 	                )
 	              ),
 	              _react2.default.createElement(
@@ -293,7 +293,7 @@
 	                      _react2.default.createElement(
 	                        'td',
 	                        null,
-	                        'onSelect'
+	                        'onMove'
 	                      ),
 	                      _react2.default.createElement(
 	                        'td',
@@ -306,6 +306,38 @@
 	                        null,
 	                        'true'
 	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'tr',
+	                      null,
+	                      _react2.default.createElement(
+	                        'td',
+	                        null,
+	                        'onSelectInLeft'
+	                      ),
+	                      _react2.default.createElement(
+	                        'td',
+	                        null,
+	                        'A callback to handle the select event on left list.'
+	                      ),
+	                      _react2.default.createElement('td', null),
+	                      _react2.default.createElement('td', null)
+	                    ),
+	                    _react2.default.createElement(
+	                      'tr',
+	                      null,
+	                      _react2.default.createElement(
+	                        'td',
+	                        null,
+	                        'onSelectInRight'
+	                      ),
+	                      _react2.default.createElement(
+	                        'td',
+	                        null,
+	                        'A callback to handle the select event on right list.'
+	                      ),
+	                      _react2.default.createElement('td', null),
+	                      _react2.default.createElement('td', null)
 	                    ),
 	                    _react2.default.createElement(
 	                      'tr',
@@ -568,7 +600,7 @@
 	                  _react2.default.createElement(
 	                    _prism2.default,
 	                    { language: 'jsx', style: _prism3.dark },
-	                    '\n                      <Duallist\n                        available={available}\n                        selected={selected}\n                        onSelect={this.onSelect}\n                        moveLeftIcon={<i className="fa fa-angle-left" />}\n                        moveAllLeftIcon={<i className="fa fa-angle-double-left" />}\n                        moveRightIcon={<i className="fa fa-angle-right" />}\n                        moveAllRightIcon={<i className="fa fa-angle-double-right" />}\n                        moveUpIcon={<i className="fa fa-angle-up" />}\n                        moveTopIcon={<i className="fa fa-angle-double-up" />}\n                        moveDownIcon={<i className="fa fa-angle-down" />}\n                        moveBottomIcon={<i className="fa fa-angle-double-down" />}\n                      />'
+	                    '\n                      <Duallist\n                        available={available}\n                        selected={selected}\n                        onMove={this.onMove}\n                        moveLeftIcon={<i className="fa fa-angle-left" />}\n                        moveAllLeftIcon={<i className="fa fa-angle-double-left" />}\n                        moveRightIcon={<i className="fa fa-angle-right" />}\n                        moveAllRightIcon={<i className="fa fa-angle-double-right" />}\n                        moveUpIcon={<i className="fa fa-angle-up" />}\n                        moveTopIcon={<i className="fa fa-angle-double-up" />}\n                        moveDownIcon={<i className="fa fa-angle-down" />}\n                        moveBottomIcon={<i className="fa fa-angle-double-down" />}\n                      />'
 	                  )
 	                ),
 	                _react2.default.createElement(
@@ -577,7 +609,7 @@
 	                  _react2.default.createElement(_src2.default, {
 	                    available: available,
 	                    selected: selected,
-	                    onSelect: this.onSelect,
+	                    onMove: this.onMove,
 	                    moveLeftIcon: _react2.default.createElement('i', { className: 'fa fa-angle-left' }),
 	                    moveAllLeftIcon: _react2.default.createElement('i', { className: 'fa fa-angle-double-left' }),
 	                    moveRightIcon: _react2.default.createElement('i', { className: 'fa fa-angle-right' }),
@@ -607,7 +639,7 @@
 	                  _react2.default.createElement(
 	                    _prism2.default,
 	                    { language: 'jsx', style: _prism3.dark },
-	                    '\n                      <Duallist\n                        available={available}\n                        selected={selected}\n                        onSelect={this.onSelect}\n                        leftLabel={leftLabel}\n                        rightLabel={rightLabel}\n                        sortable={true}\n                        searchable={true}\n                      />'
+	                    '\n                      <Duallist\n                        available={available}\n                        selected={selected}\n                        onMove={this.onMove}\n                        leftLabel={leftLabel}\n                        rightLabel={rightLabel}\n                        sortable={true}\n                        searchable={true}\n                      />'
 	                  )
 	                ),
 	                _react2.default.createElement(
@@ -616,7 +648,7 @@
 	                  _react2.default.createElement(_src2.default, {
 	                    available: available,
 	                    selected: selected,
-	                    onSelect: this.onSelect,
+	                    onMove: this.onMove,
 	                    leftLabel: leftLabel,
 	                    rightLabel: rightLabel,
 	                    sortable: true,
@@ -642,7 +674,7 @@
 	                  _react2.default.createElement(
 	                    _prism2.default,
 	                    { language: 'jsx', style: _prism3.dark },
-	                    '\n                      <Duallist\n                        available={available}\n                        selected={selected}\n                        onSelect={this.onSelect}\n                        leftLabel={leftLabel}\n                        rightLabel={rightLabel}\n                        sortable={false}\n                        searchable={true}\n                      />'
+	                    '\n                      <Duallist\n                        available={available}\n                        selected={selected}\n                        onMove={this.onMove}\n                        leftLabel={leftLabel}\n                        rightLabel={rightLabel}\n                        sortable={false}\n                        searchable={true}\n                      />'
 	                  )
 	                ),
 	                _react2.default.createElement(
@@ -651,7 +683,7 @@
 	                  _react2.default.createElement(_src2.default, {
 	                    available: available,
 	                    selected: selected,
-	                    onSelect: this.onSelect,
+	                    onMove: this.onMove,
 	                    leftLabel: leftLabel,
 	                    rightLabel: rightLabel,
 	                    sortable: false,
@@ -677,7 +709,7 @@
 	                  _react2.default.createElement(
 	                    _prism2.default,
 	                    { language: 'jsx', style: _prism3.dark },
-	                    '\n                      <Duallist\n                        available={available}\n                        selected={selected}\n                        onSelect={this.onSelect}\n                        leftLabel={leftLabel}\n                        rightLabel={rightLabel}\n                        sortable={true}\n                        searchable={false}\n                      />'
+	                    '\n                      <Duallist\n                        available={available}\n                        selected={selected}\n                        onMove={this.onMove}\n                        leftLabel={leftLabel}\n                        rightLabel={rightLabel}\n                        sortable={true}\n                        searchable={false}\n                      />'
 	                  )
 	                ),
 	                _react2.default.createElement(
@@ -686,7 +718,7 @@
 	                  _react2.default.createElement(_src2.default, {
 	                    available: available,
 	                    selected: selected,
-	                    onSelect: this.onSelect,
+	                    onMove: this.onMove,
 	                    leftLabel: leftLabel,
 	                    rightLabel: rightLabel,
 	                    sortable: true,
@@ -56668,6 +56700,8 @@
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Licensed under the MIT license.
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
+	/* eslint-disable react/sort-comp */
+
 	var Duallist = function (_Component) {
 	  _inherits(Duallist, _Component);
 
@@ -56690,76 +56724,76 @@
 	    }, _this.onMoveLeft = function () {
 	      var _this$props = _this.props,
 	          selected = _this$props.selected,
-	          onSelect = _this$props.onSelect;
+	          onMove = _this$props.onMove;
 
 	      var selectedOptions = selected.filter(function (op) {
 	        return !_this.state.rightSelected.includes(op);
 	      });
-	      onSelect(selectedOptions);
+	      onMove(selectedOptions);
 	      _this.setState({ rightSelected: [] });
 	    }, _this.onMoveAllLeft = function () {
-	      var onSelect = _this.props.onSelect;
+	      var onMove = _this.props.onMove;
 
-	      onSelect([]);
+	      onMove([]);
 	      _this.setState({ rightSelected: [] });
 	    }, _this.onMoveRight = function () {
 	      var _this$props2 = _this.props,
 	          selected = _this$props2.selected,
-	          onSelect = _this$props2.onSelect;
+	          onMove = _this$props2.onMove;
 
 	      var selectedOptions = [].concat(_toConsumableArray(selected), _toConsumableArray(_this.state.leftSelected));
-	      onSelect(selectedOptions);
+	      onMove(selectedOptions);
 	      _this.setState({ leftSelected: [] });
 	    }, _this.onMoveAllRight = function () {
 	      var _this$props3 = _this.props,
 	          available = _this$props3.available,
-	          onSelect = _this$props3.onSelect;
+	          onMove = _this$props3.onMove;
 
 	      var selectedOptions = available.map(function (op) {
 	        return op.value;
 	      });
-	      onSelect(selectedOptions);
+	      onMove(selectedOptions);
 	      _this.setState({ leftSelected: [] });
 	    }, _this.onMoveUp = function () {
 	      var _this$props4 = _this.props,
 	          selected = _this$props4.selected,
-	          onSelect = _this$props4.onSelect;
+	          onMove = _this$props4.onMove;
 
 	      var newSelected = selected;
 	      var currentIndex = selected.indexOf(_this.state.rightSelected[0]);
 	      newSelected.splice(currentIndex, 1);
 	      newSelected.splice(currentIndex - 1, 0, _this.state.rightSelected[0]);
-	      onSelect(newSelected);
+	      onMove(newSelected);
 	    }, _this.onMoveAllUp = function () {
 	      var _this$props5 = _this.props,
 	          selected = _this$props5.selected,
-	          onSelect = _this$props5.onSelect;
+	          onMove = _this$props5.onMove;
 
 	      var newSelected = selected;
 	      var currentIndex = selected.indexOf(_this.state.rightSelected[0]);
 	      newSelected.splice(currentIndex, 1);
 	      newSelected.splice(0, 0, _this.state.rightSelected[0]);
-	      onSelect(newSelected);
+	      onMove(newSelected);
 	    }, _this.onMoveDown = function () {
 	      var _this$props6 = _this.props,
 	          selected = _this$props6.selected,
-	          onSelect = _this$props6.onSelect;
+	          onMove = _this$props6.onMove;
 
 	      var newSelected = selected;
 	      var currentIndex = selected.indexOf(_this.state.rightSelected[0]);
 	      newSelected.splice(currentIndex, 1);
 	      newSelected.splice(currentIndex + 1, 0, _this.state.rightSelected[0]);
-	      onSelect(newSelected);
+	      onMove(newSelected);
 	    }, _this.onMoveAllDown = function () {
 	      var _this$props7 = _this.props,
 	          selected = _this$props7.selected,
-	          onSelect = _this$props7.onSelect;
+	          onMove = _this$props7.onMove;
 
 	      var newSelected = selected;
 	      var currentIndex = selected.indexOf(_this.state.rightSelected[0]);
 	      newSelected.splice(currentIndex, 1);
 	      newSelected.splice(newSelected.length, 0, _this.state.rightSelected[0]);
-	      onSelect(newSelected);
+	      onMove(newSelected);
 	    }, _this.onSelectInLeft = function (event) {
 	      var options = event.target.options;
 	      var values = [];
@@ -56768,6 +56802,7 @@
 	          values.push(options[i].value);
 	        }
 	      }
+	      if (_this.props.onSelectInLeft) _this.props.onSelectInLeft(values);
 	      _this.setState({ leftSelected: values });
 	    }, _this.onSelectInRight = function (event) {
 	      var options = event.target.options;
@@ -56777,6 +56812,7 @@
 	          values.push(options[i].value);
 	        }
 	      }
+	      if (_this.props.onSelectInRight) _this.props.onSelectInRight(values);
 	      _this.setState({ rightSelected: values });
 	    }, _this.renderLeftList = function () {
 	      var _this$props8 = _this.props,
@@ -56849,9 +56885,16 @@
 	          moveUpIcon = _props.moveUpIcon,
 	          moveTopIcon = _props.moveTopIcon,
 	          moveDownIcon = _props.moveDownIcon,
-	          moveBottomIcon = _props.moveBottomIcon;
+	          moveBottomIcon = _props.moveBottomIcon,
+	          available = _props.available,
+	          selected = _props.selected;
 
 
+	      if (available.length < 1 || selected.length < 1) return _react2.default.createElement(
+	        'h3',
+	        null,
+	        'Please pass non empty arrays '
+	      );
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'react-listbox-dual-list' },

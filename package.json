@@ -1,6 +1,6 @@
 {
   "name": "react-duallist",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "private": false,
   "description": "A React based searchable, sortable and fully customizable dual list.",
   "main": "lib/index.js",

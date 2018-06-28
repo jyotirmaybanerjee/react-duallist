@@ -23,7 +23,7 @@ export default class Examples extends Component {
     selected: ['AL', 'CA'],
   }
 
-  onSelect = (selected) => {
+  onMove = (selected) => {
     this.setState({selected});
   }
 
@@ -70,7 +70,7 @@ export default class Examples extends Component {
                     <Duallist
                       available={available}
                       selected={selected}
-                      onSelect={this.onSelect}
+                      onMove={this.onMove}
                     />`
                   }
                 </SyntaxHighlighter>
@@ -119,10 +119,22 @@ export default class Examples extends Component {
                       <td>true, atleast need to pass an empty array</td>
                     </tr>
                     <tr>
-                      <td>onSelect</td>
+                      <td>onMove</td>
                       <td>A callback to handle the change in the selected list.</td>
                       <td></td>
                       <td>true</td>
+                    </tr>
+                    <tr>
+                      <td>onSelectInLeft</td>
+                      <td>A callback to handle the select event on left list.</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>onSelectInRight</td>
+                      <td>A callback to handle the select event on right list.</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                     <tr>
                       <td>leftLabel</td>
@@ -209,7 +221,7 @@ export default class Examples extends Component {
                       <Duallist
                         available={available}
                         selected={selected}
-                        onSelect={this.onSelect}
+                        onMove={this.onMove}
                         moveLeftIcon={<i className="fa fa-angle-left" />}
                         moveAllLeftIcon={<i className="fa fa-angle-double-left" />}
                         moveRightIcon={<i className="fa fa-angle-right" />}
@@ -226,7 +238,7 @@ export default class Examples extends Component {
                   <Duallist
                     available={available}
                     selected={selected}
-                    onSelect={this.onSelect}
+                    onMove={this.onMove}
                     moveLeftIcon={<i className="fa fa-angle-left" />}
                     moveAllLeftIcon={<i className="fa fa-angle-double-left" />}
                     moveRightIcon={<i className="fa fa-angle-right" />}
@@ -248,7 +260,7 @@ export default class Examples extends Component {
                       <Duallist
                         available={available}
                         selected={selected}
-                        onSelect={this.onSelect}
+                        onMove={this.onMove}
                         leftLabel={leftLabel}
                         rightLabel={rightLabel}
                         sortable={true}
@@ -261,7 +273,7 @@ export default class Examples extends Component {
                   <Duallist
                     available={available}
                     selected={selected}
-                    onSelect={this.onSelect}
+                    onMove={this.onMove}
                     leftLabel={leftLabel}
                     rightLabel={rightLabel}
                     sortable={true}
@@ -279,7 +291,7 @@ export default class Examples extends Component {
                       <Duallist
                         available={available}
                         selected={selected}
-                        onSelect={this.onSelect}
+                        onMove={this.onMove}
                         leftLabel={leftLabel}
                         rightLabel={rightLabel}
                         sortable={false}
@@ -292,7 +304,7 @@ export default class Examples extends Component {
                   <Duallist
                     available={available}
                     selected={selected}
-                    onSelect={this.onSelect}
+                    onMove={this.onMove}
                     leftLabel={leftLabel}
                     rightLabel={rightLabel}
                     sortable={false}
@@ -310,7 +322,7 @@ export default class Examples extends Component {
                       <Duallist
                         available={available}
                         selected={selected}
-                        onSelect={this.onSelect}
+                        onMove={this.onMove}
                         leftLabel={leftLabel}
                         rightLabel={rightLabel}
                         sortable={true}
@@ -323,7 +335,7 @@ export default class Examples extends Component {
                   <Duallist
                     available={available}
                     selected={selected}
-                    onSelect={this.onSelect}
+                    onMove={this.onMove}
                     leftLabel={leftLabel}
                     rightLabel={rightLabel}
                     sortable={true}
