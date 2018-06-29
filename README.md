@@ -73,3 +73,4 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * 1.1.1 - Rename lib directory
 * 1.1.2 - Handle when empty arrays are passed
 * 1.1.4 - OnSelect handlers for the left and right lists.
+* 1.1.5 - [Fix for issue #1] Allow empty 'selected' array

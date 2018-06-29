@@ -190,7 +190,7 @@
        moveAllLeftIcon, moveRightIcon, moveAllRightIcon, moveUpIcon,
        moveTopIcon, moveDownIcon, moveBottomIcon, available, selected} = this.props;
 
-     if (available.length < 1 || selected.length < 1)
+     if (available.length < 1)
       return <h3>Please pass non empty arrays </h3>;
      return (
        <div className="react-listbox-dual-list">
