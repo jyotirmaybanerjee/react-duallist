@@ -31,6 +31,8 @@
      onMove: ?(Array<Object>) => void,
      onSelectInLeft: ?(Array<Object>) => void,
      onSelectInRight: ?(Array<Object>) => void,
+     leftSearchPlaceholder: string,
+     rightSearchPlaceholder: string
    };
 
    static defaultProps = {
@@ -46,6 +48,8 @@
     moveTopIcon: <span style={{fontSize: '14px', fontWeight: 'bold', color: '#000'}}>&#x21c8;</span>,
     moveDownIcon: <span style={{fontSize: '14px', fontWeight: 'bold', color: '#000'}}>&#xffec;</span>,
     moveBottomIcon: <span style={{fontSize: '14px', fontWeight: 'bold', color: '#000'}}>&#x21ca;</span>,
+    leftSearchPlaceholder: 'Search available options',
+    rightSearchPlaceholder: 'Search selected options'
   }
 
    state = {
@@ -188,7 +192,8 @@
    render() {
      const {leftLabel, rightLabel, sortable, searchable, moveLeftIcon,
        moveAllLeftIcon, moveRightIcon, moveAllRightIcon, moveUpIcon,
-       moveTopIcon, moveDownIcon, moveBottomIcon, available, selected} = this.props;
+       moveTopIcon, moveDownIcon, moveBottomIcon, available, selected,
+       leftSearchPlaceholder, rightSearchPlaceholder} = this.props;
 
      if (available.length < 1)
       return <h3>Please pass non empty arrays </h3>;
@@ -199,7 +204,7 @@
              {leftLabel}
            </label>
            {searchable &&
-             <input type="text" className="search-bar left-search" placeholder="Search available options" onChange={this.onLeftSearch} />
+             <input type="text" className="search-bar left-search" placeholder={leftSearchPlaceholder} onChange={this.onLeftSearch} />
            }
            <div className="list-container">
              {this.renderLeftList()}
@@ -240,7 +245,7 @@
              {rightLabel}
            </label>
            {searchable &&
-             <input type="text" className="search-bar right-search" placeholder="Search selected options" onChange={this.onRightSearch} />
+             <input type="text" className="search-bar right-search" placeholder={rightSearchPlaceholder} onChange={this.onRightSearch} />
            }
            <div className="list-container">
              {this.renderRightList()}
